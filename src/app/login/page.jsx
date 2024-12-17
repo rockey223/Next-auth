@@ -19,7 +19,7 @@ const formSchema = z.object({
   password: z
     .string()
     .min(2, { message: "Password must be at least 2 characters long" })
-    .max(8, { message: "Password cannot exceed 8 characters" }),
+    // .max(8, { message: "Password cannot exceed 8 characters" }),
 });
 
 const Page = () => {
@@ -36,8 +36,8 @@ const Page = () => {
   const onSubmit = async (data) => {
     try {
       const res = await signIn("credentials", {
-        email: "rockeym50@gmail.com",
-        password: "Maharjan@1",
+        email: "test@gmail.com",
+        password: "Sdf654!1",
         redirect: false,
       });
 
@@ -94,6 +94,7 @@ const Page = () => {
             )}
           />
           <Button type="submit">Submit</Button>
+          <Button onClick={()=>{signIn('google')}}>Google</Button>
         </form>
       </Form>
     </>
